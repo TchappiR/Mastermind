@@ -42,7 +42,7 @@ while party_counter < max_party_number and player_color_list != secret_color_lis
 
 
 if player_color_list == secret_color_list:
-    print("Bravo vous avez trouvez la liste secrète...")
+    print("Bravo vous avez trouvez la liste secrète.....")
 
 else :
-    print("Vous avez perdu la partie...")
+    print("Vous avez perdu la partie.....")

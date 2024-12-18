@@ -22,3 +22,41 @@ Après chaque tentative, des indices sont donnés :
 
 Le joueur gagne s’il devine la combinaison avant d’épuiser ses 10 essais.
 Sinon, il perd et la combinaison secrète est révélée.
+
+#     Étapes pour Exécuter le Jeu
+        Mode Terminal
+
+        Clonez ce dépôt sur votre machine locale :
+1-Copier le code
+    .git clone <url_du_dépôt>
+2-Naviguez dans le répertoire du projet :
+    .cd mastermind-python
+3-Lancez le fichier Python principal :
+    .python mastermind.py
+
+   # Organisation du Code
+
+Le projet est structuré en étapes modulaires pour faciliter le développement et la maintenance :
+
+1-Initialisation du jeu :
+    .Génération aléatoire de la combinaison secrète.
+    .Définition des constantes du jeu (longueur de la combinaison, nombre d’essais, valeurs autorisées).
+
+2-Interaction avec le joueur :
+    .Saisie sécurisée et validation de la proposition.
+
+3-Vérification des combinaisons :
+    .Calcul des indices * et -.
+    .Gestion des doublons.
+
+4-Boucle principale :
+    .Gestion des tours.
+    .Affichage des résultats intermédiaires.
+    .Détection de la victoire ou de la défaite.
+
+5-Interface graphique (optionnelle) :
+    .Création d’une fenêtre avec Pygame.
+    .Affichage des tentatives et des indices.
+
+  #  LICENCE
+Ce projet est sous licence libre (par exemple, MIT). Vous êtes libre de l’utiliser, le modifier et le redistribuer.
