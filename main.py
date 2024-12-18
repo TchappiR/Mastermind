@@ -3,7 +3,8 @@ import random
 general_color_list = ["noir", "rouge", "bleu", "vert", "jaune", "blanc"]
 max_party_number = 10
 party_counter = 1
-player_color_list = []
+player_color_list = [] 
+    
 
 #creation de la liste secrete à deviner par le joueur
 def generate_secret_list():
@@ -15,7 +16,7 @@ def create_player_list():
     return [
         input(f"Entrez la couleur {color_rang} : ").lower().replace(" ", "")
         for color_rang in range(1, 5)
-            
+        
     ]
 
 
@@ -27,6 +28,8 @@ while party_counter < max_party_number and player_color_list != secret_color_lis
     correct_color_position = 0
     bad_color_position = 0
     
+    print(f"\nEssai {party_counter} sur {max_party_number}. Il vous reste {max_party_number - party_counter} essais.\n")
+
     player_color_list = create_player_list()
     
     print('_'*65,'\n')
@@ -41,12 +44,11 @@ while party_counter < max_party_number and player_color_list != secret_color_lis
                 bad_color_position += 1
     
     party_counter += 1
-    print('_'*65,'\n')
+    
     print(f"Vous avez :\n\t* {correct_color_position}")
     if correct_color_position < 4:
         print(f"\t- {bad_color_position}")
-    print(f"\nEssai {party_counter} sur {max_party_number}. Il vous reste {max_party_number - party_counter} essais.\n")
-
+    
 
 if player_color_list == secret_color_list:
     print("Bravo vous avez trouvez la liste secrète.....")
