@@ -6,7 +6,7 @@ party_counter = 1
 player_color_list = [] 
     
 
-#creation de la liste secrete à deviner par le joueur
+#Fonction de creation de la liste secrete à deviner par le joueur
 def generate_secret_list():
     return random.sample(general_color_list, 4)
 #print(secret_color_list)
@@ -32,7 +32,6 @@ while party_counter < max_party_number and player_color_list != secret_color_lis
 
     player_color_list = create_player_list()
     
-    print('_'*65,'\n')
     print(f"Votre proposition est : {player_color_list}")
     
     for index_player_color, player_color in enumerate(player_color_list):
@@ -48,10 +47,9 @@ while party_counter < max_party_number and player_color_list != secret_color_lis
     print(f"Vous avez :\n\t* {correct_color_position}")
     if correct_color_position < 4:
         print(f"\t- {bad_color_position}")
-    
+    print('_'*65,'\n')
 
 if player_color_list == secret_color_list:
-    print("Bravo vous avez trouvez la liste secrète.....")
-
+    print("Bravo vous avez trouvé la liste secrète.....")
 else :
     print("Vous avez perdu la partie...\nLa combinaison secrète etait {secret_color_list}")
