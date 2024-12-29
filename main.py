@@ -12,16 +12,23 @@ def generate_secret_list():
 #print(secret_color_list)
 
 # Fonction de création de la liste couleur du joueur
-def create_player_list():  
-    return [
-        input(f"Entrez la couleur {color_rang} : ").lower().replace(" ", "")
-        for color_rang in range(1, 5)
-        
-    ]
+def create_player_list():
+    player_list = []
+    given_color = ""
+    for color_rang in range(1, 5):
+        while given_color not in general_color_list:
+            given_color = input(f"Entrez la couleur {color_rang} : ").lower().replace(" ", "")
+            if given_color not in general_color_list:
+                print(f"Vous devez entrer une couleur qui est dans la liste de couleur suivante: {general_color_list}")
+        player_list.append(given_color)
+        given_color = ""
+    
+    return player_list
 
 
 # Creation de la partie
 secret_color_list = generate_secret_list()
+create_player_list()
 
 while party_counter < max_party_number and player_color_list != secret_color_list:
     
@@ -52,4 +59,4 @@ while party_counter < max_party_number and player_color_list != secret_color_lis
 if player_color_list == secret_color_list:
     print("Bravo vous avez trouvé la liste secrète.....")
 else :
-    print("Vous avez perdu la partie...\nLa combinaison secrète etait {secret_color_list}")
+    print(f"Vous avez perdu la partie...\nLa combinaison secrète etait {secret_color_list}")
